@@ -52,3 +52,18 @@ function playRound (playerSelection, computerSelection) {
 
 } 
 
+/* const playerSelection = "rock";
+const computerSelection = computerPlay();
+console.log(playRound(playerSelection, computerSelection)); */
+
+function game() {
+
+    for (let i = 0; i < 5; i++) {
+
+        playerSelection = window.prompt("Enter rock, paper or scissors");
+        computerSelection = computerPlay();
+        console.log(playRound(playerSelection, computerSelection));
+    }
+
+    return "Thanks for playing!";
+}
