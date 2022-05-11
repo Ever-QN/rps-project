@@ -19,16 +19,16 @@ function computerWinsRound() {
      computerCounter.textContent = `Computer = ${computerScore}`;
 }
 
-function computerWinsGame() {
-    if (computerScore == 5 && computerScore > playerScore) {
-        return "You lost the entire game! The computer beat you in a game to five. The final score was ";
-    }
-}
+// function computerWinsGame() {
+//     if (computerScore == 5 && computerScore > playerScore) {
+//         return "You lost the entire game! The computer beat you in a game to five. The final score was ";
+//     }
+// }
 
-function playerWinsGame() {
-    if (computerScore == 5 && computerScore > playerScore) {
-        return "You won the entire game! You beat the computer in a game to five. The final score was ";
-    }
+// function playerWinsGame() {
+//     if (computerScore == 5 && computerScore > playerScore) {
+//         return "You won the entire game! You beat the computer in a game to five. The final score was ";
+//     }
 
 }
 
@@ -37,11 +37,8 @@ function playRound (playerSelection) {
     let computerSelection = computerPlay();
     let roundResult;
 
-    // if (playerScore == 5 && playerScore > computerScore) {
-    //     return playerWinsGame();
-    // } else if (computerScore == 5 && computerScore > playerScore) {
-    //     return computerWinsGame();
-    // }
+    playerWinsGame();
+    computerWinsGame();
 
     if (playerSelection === "rock" && computerSelection === "paper") {
         computerWinsRound();
