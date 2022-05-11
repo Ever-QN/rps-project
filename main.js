@@ -8,37 +8,37 @@ function playRound (playerSelection, computerSelection) {
 
     let roundResult;
 
-    if (playerSelection.toLowerCase() === "rock" && computerSelection === "paper") {
+    if (playerSelection === "rock" && computerSelection === "paper") {
 
         roundResult = "You lose. Paper beats rock.";
         return roundResult;
 
-    } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") {
+    } else if (playerSelection === "rock" && computerSelection === "scissors") {
         
         roundResult = "You win! Rock beats scissors";
         return roundResult;
 
-    } else if (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") {
+    } else if (playerSelection === "paper" && computerSelection === "rock") {
 
         roundResult = "You win! Paper beats rock."
         return roundResult;
 
-    } else if (playerSelection.toLowerCase() === "paper" && computerSelection === "scissors") {
+    } else if (playerSelection === "paper" && computerSelection === "scissors") {
 
         roundResult = "You lose. Scissors beats paper.";
         return roundResult;
 
-    } else if (playerSelection.toLowerCase() === "scissors" && computerSelection == "rock") {
+    } else if (playerSelection === "scissors" && computerSelection == "rock") {
 
         roundResult = "You lose. Rock beats scissors.";
         return roundResult;
 
-    } else if (playerSelection.toLowerCase() === "scissors" && computerSelection == "paper") {
+    } else if (playerSelection === "scissors" && computerSelection == "paper") {
 
         roundResult = "You win! Scissors beats paper.";
         return roundResult;
 
-    } else if (playerSelection.toLowerCase() === computerSelection) {
+    } else if (playerSelection === computerSelection) {
 
         roundResult = "Tied! Both of you chose " + playerSelection + ".";
         return roundResult;
@@ -64,16 +64,19 @@ function playRound (playerSelection, computerSelection) {
 //     return "Thanks for playing!";
 // }
 
-let btnRock = document.createElement("button");
-btnRock.textContent = "Rock";
+let btnRock = document.querySelector("#rock");
+let btnPaper = document.querySelector("#paper");
+let btnScissors = document.querySelector("#scissors");
 
-let btnPaper = document.createElement("button");
-btnPaper.textContent = "Paper";
-
-let btnScissors = document.createElement("button");
-btnScissors.textContent = "Scissors";
-
-document.body.append(btnRock, btnPaper, btnScissors);
-
-const btnChoice = document.querySelectorAll(".btnRock, .btnPaper, .btnScissors");
-
+btnRock.addEventListener("click", function(){
+    computerSelection = computerPlay();
+    playRound(rock, computerSelection);
+});
+btnPaper.addEventListener("click", function(){
+    computerSelection = computerPlay();
+    playRound(paper, computerSelection);
+});
+btnScissors.addEventListener("click", function(){
+    computerSelection = computerPlay();
+    playRound(scissors, computerSelection);
+});
