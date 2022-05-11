@@ -4,8 +4,9 @@ function computerPlay() {
     return computerResult;
 }
 
-function playRound (playerSelection, computerSelection) {
+function playRound (playerSelection) {
 
+    let computerSelection = computerPlay();
     let roundResult;
 
     if (playerSelection === "rock" && computerSelection === "paper") {
@@ -68,15 +69,13 @@ let btnRock = document.querySelector("#rock");
 let btnPaper = document.querySelector("#paper");
 let btnScissors = document.querySelector("#scissors");
 
-btnRock.addEventListener("click", function(){
-    computerSelection = computerPlay();
-    playRound(rock, computerSelection);
+btnRock.addEventListener("click", function() {
+    console.log(playRound("rock"));
 });
-btnPaper.addEventListener("click", function(){
+btnPaper.addEventListener("click", function() {
     computerSelection = computerPlay();
-    playRound(paper, computerSelection);
+    console.log(playRound("paper"));
 });
-btnScissors.addEventListener("click", function(){
-    computerSelection = computerPlay();
-    playRound(scissors, computerSelection);
+btnScissors.addEventListener("click", function() {
+    console.log(playRound("scissors"));
 });
