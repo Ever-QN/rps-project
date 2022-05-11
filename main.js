@@ -4,49 +4,83 @@ function computerPlay() {
     return computerResult;
 }
 
+let playerScore = 0;
+let computerScore = 0;
+
+function playerWinsRound() {
+    playerScore++;
+    let playerCounter = document.querySelector("#playerCounter");
+    playerCounter.textContent = `Player = ${playerScore}`;
+}
+
+function computerWinsRound() {
+    computerScore++;
+    let computerCounter = document.querySelector("#computerCounter");
+     computerCounter.textContent = `Computer = ${computerScore}`;
+}
+
+function computerWinsGame() {
+    if (computerScore == 5 && computerScore > playerScore) {
+        return "You lost the entire game! The computer beat you in a game to five. The final score was ";
+    }
+}
+
+function playerWinsGame() {
+    if (computerScore == 5 && computerScore > playerScore) {
+        return "You won the entire game! You beat the computer in a game to five. The final score was ";
+    }
+
+}
+
 function playRound (playerSelection) {
 
     let computerSelection = computerPlay();
     let roundResult;
 
-    if (playerSelection === "rock" && computerSelection === "paper") {
+    // if (playerScore == 5 && playerScore > computerScore) {
+    //     return playerWinsGame();
+    // } else if (computerScore == 5 && computerScore > playerScore) {
+    //     return computerWinsGame();
+    // }
 
+    if (playerSelection === "rock" && computerSelection === "paper") {
+        computerWinsRound();
         roundResult = "You lose. Paper beats rock.";
         return roundResult;
 
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
-        
+        playerWinsRound();
         roundResult = "You win! Rock beats scissors";
         return roundResult;
 
     } else if (playerSelection === "paper" && computerSelection === "rock") {
-
-        roundResult = "You win! Paper beats rock."
+        playerWinsRound();
+        roundResult = "You win! Paper beats rock.";
         return roundResult;
 
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
-
+        computerWinsRound();
         roundResult = "You lose. Scissors beats paper.";
         return roundResult;
 
     } else if (playerSelection === "scissors" && computerSelection == "rock") {
-
-        roundResult = "You lose. Rock beats scissors.";
+        computerWinsRound();
+        roundResult = "You lose. Rock beats scissors. The score (player-computer) is " + gameScore;
         return roundResult;
 
     } else if (playerSelection === "scissors" && computerSelection == "paper") {
-
+        playerWinsRound();
         roundResult = "You win! Scissors beats paper.";
         return roundResult;
 
     } else if (playerSelection === computerSelection) {
 
-        roundResult = "Tied! Both of you chose " + playerSelection + ".";
+        roundResult = "Tied! Both of you chose " + playerSelection + ". ";
         return roundResult;
 
     } else {
 
-        roundResult = "Error! Something went wrong. Perhaps an invalid input?";
+        roundResult = "Error! Something went wrong";
         return roundResult;
 
     }
