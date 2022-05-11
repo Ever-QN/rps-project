@@ -68,14 +68,14 @@ function playRound (playerSelection) {
 let btnRock = document.querySelector("#rock");
 let btnPaper = document.querySelector("#paper");
 let btnScissors = document.querySelector("#scissors");
+let divResults = document.querySelector("#gameResult");
 
 btnRock.addEventListener("click", function() {
-    console.log(playRound("rock"));
+    divResults.textContent = playRound("rock");
 });
 btnPaper.addEventListener("click", function() {
-    computerSelection = computerPlay();
-    console.log(playRound("paper"));
+    divResults.textContent = playRound("paper");
 });
 btnScissors.addEventListener("click", function() {
-    console.log(playRound("scissors"));
+    divResults.textContent = playRound("scissors");
 });
