@@ -12,6 +12,7 @@ function computerWinsGame() {
         btnRock.style.display = "none";
         btnPaper.style.display = "none";
         btnScissors.style.display = "none";
+        playAgainBtn.classList.remove("hidden");
     }
 }
 
@@ -20,6 +21,7 @@ function playerWinsGame() {
         btnRock.style.display = "none";
         btnPaper.style.display = "none";
         btnScissors.style.display = "none";
+        playAgainBtn.classList.remove("hidden");
     }
 
 }
@@ -113,3 +115,26 @@ btnScissors.addEventListener("click", function() {
     divRoundResults.textContent = playRound("scissors");
 });
 
+    
+let roundResult = document.querySelector("#roundResult");
+let gameResult = document.querySelector("#gameResult");
+let playAgainBtn = document.querySelector("#play-again");
+
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    let playerCounter = document.querySelector("#playerCounter");
+    let computerCounter = document.querySelector("#computerCounter");
+    playerCounter.textContent = `Player: ${playerScore}`;
+    computerCounter.textContent = `Computer: ${computerScore}`;
+    btnRock.style.display = "inline-block";
+    btnPaper.style.display = "inline-block";
+    btnScissors.style.display = "inline-block";
+    roundResult.textContent = "";
+    gameResult.textContent = "";
+    playAgainBtn.classList.add("hidden");
+}
+    
+playAgainBtn.addEventListener("click", function() {
+    resetGame();
+});

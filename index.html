@@ -7,14 +7,26 @@
     <title>Quynh's RPS Game</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<script src="main.js" defer></script>
 <body>
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
-    <div id ="roundResult"></div>
-    <div id ="gameResult"></div>
-    <div id="playerCounter">Player = 0</div>
-    <div id="computerCounter">Computer = 0</div>
+    <div class="container">
+        <h1>Rock Paper Scissors</h1>
+        <div class="game">
+            <div class="game-options">
+                <button id="rock" class="game-button button">Rock</button>
+                <button id="paper" class="game-button button ">Paper</button>
+                <button id="scissors" class="game-button button">Scissors</button>
+            </div>
+            <div class="game-results">
+                <div id="roundResult" class="round-result fadeIn"></div>
+                <div id="gameResult" class="game-result"></div>
+            </div>
+        </div>
+        <div class="score">
+            <div id="playerCounter" class="score-item">Player: <span id="playerScore">0</span></div>
+            <div id="computerCounter" class="score-item">Computer: <span id="computerScore">0</span></div>
+        </div>
+    </div>
+    <button id="play-again" class="hidden">Play Again</button>
+    <script src="main.js" defer></script>
 </body>
 </html>

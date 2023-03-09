@@ -1,50 +1,109 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+html {
+    font-size: 16px;
+    font-family: sans-serif;
+    color: #444;
+ }
+  
 body {
-    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f4f4f4;
+}
+  
+h1 {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    color: #333;
+}
+  
+.container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
-
+  
 button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px 32px;
+    background-color: #e7e7e7;
+    border: none;
+    color: #000;
+    padding: 16px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 10px;
-    border-radius: 8px;
-    border: none;
+    margin: 4px 2px;
     cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
 }
-
+  
 button:hover {
-    background-color: #3e8e41;
+    background-color: #ddd;
 }
 
+button:active {
+    transform: translateY(2px);
+}
+  
 #roundResult {
-    font-size: 24px;
-    margin-top: 20px;
+    margin: 2rem 0;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
 }
-
+  
 #gameResult {
-    font-size: 32px;
-    margin-top: 20px;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+  
+.counter {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+  
+#playerCounter {
+    color: #0f0;
+}
+  
+#computerCounter {
+    color: #f00;
+}
+  
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+  
+.fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
 }
 
-#playerCounter, #computerCounter {
-    font-size: 24px;
-    margin-top: 20px;
+.hidden {
+    display: none;
 }
-
-#playerCounter::before, #computerCounter::before {
-    content: "";
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-    background-image: url("https://img.icons8.com/officexs/30/000000/user-male.png");
-}
-
-#computerCounter::before {
-    background-image: url("https://img.icons8.com/officexs/30/000000/computer.png");
-}
+  
