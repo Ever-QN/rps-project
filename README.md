@@ -8,3 +8,5 @@ This is a simple implementation of the classic Rock-Paper-Scissors game in HTML,
 3. The game will display the results of the round, and update the scores accordingly.<br>
 4. The game ends when one of the players reaches the maximum score (default is 5).<br>
 5. Click the "Play Again" button to reset the game and start over.<br>
+
+Play here: https://ever-qn.github.io/rps-project/
